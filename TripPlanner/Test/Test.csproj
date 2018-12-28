@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cqrs.Service\Cqrs.Service.csproj" />
+    <ProjectReference Include="..\DomainModels\DomainModels.csproj" />
+    <ProjectReference Include="..\Entity.Models\Entity.Models.csproj" />
+    <ProjectReference Include="..\Persistency.Contracts\Persistency.Contracts.csproj" />
+    <ProjectReference Include="..\Persistency.Implementations\Persistency.Implementations.csproj" />
+    <ProjectReference Include="..\Persistency.Mappings\Persistency.Mappings.csproj" />
+    <ProjectReference Include="..\Repositories.Contracts\Repositories.Contracts.csproj" />
+    <ProjectReference Include="..\TripPlanner.Api\TripPlanner.Api.csproj" />
+  </ItemGroup>
+
+</Project>
