@@ -1,23 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Trip } from './trip.model';
+import { Observable } from 'rxjs';
 
 const BaseRoute: string = 'http://localhost/TripPlanner';
 
 @Injectable({
   providedIn: 'root'
 })
+export class AddTripService {
 
-export class TestServiceService {
+  constructor(private http: HttpClient) { }
 
-  constructor(private httpclient: HttpClient) { }
-
-  public getTrip(): Promise<any> {
+  public addTrip(trip: Trip): Observable<Trip> {
     let route = `${BaseRoute}/api/trip`;
-    
-    let x = this.httpclient.get(route);
-    return x.toPromise();
+
+    return this.http.post<Trip>(route, trip);
   }
 }
-
-
-

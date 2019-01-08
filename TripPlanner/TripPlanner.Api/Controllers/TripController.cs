@@ -61,5 +61,14 @@ namespace TripPlanner.Api.Controllers
             return NoContent();
         }
 
+        [HttpGet]
+        public IActionResult GetAllTrips()
+        {
+            var query = new GetAllTripsQuery();
+            var queryResult = QueryDispatcher.Execute<GetAllTripsQuery, GetAllTripsQueryResult>(query);
+
+            return Ok(queryResult.Trips);
+        }
+
     }
 }
