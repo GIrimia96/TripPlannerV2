@@ -20,17 +20,14 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.testService.getTrip().then(result => {
-      this.trips = result;
-      console.log(result);
-    }).catch(error => {
-    });
+    this.testService.getTrip()
+          .subscribe(trips => this.trips = trips);
   }
 
   onSubmit(f: NgForm) {
     this.tripToAdd = new Trip();
     
-    this.tripToAdd.id = f.value.id;
+    // this.tripToAdd.id = f.value.id;
     this.tripToAdd.authorInformation = f.value.authorInformation;
     this.tripToAdd.fromLocation = f.value.fromLocation;
     this.tripToAdd.toLocation = f.value.toLocation;

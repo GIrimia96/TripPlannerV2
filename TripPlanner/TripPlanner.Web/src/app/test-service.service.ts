@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 const BaseRoute: string = 'http://localhost/TripPlanner';
 
@@ -11,11 +12,10 @@ export class TestServiceService {
 
   constructor(private httpclient: HttpClient) { }
 
-  public getTrip(): Promise<any> {
+  public getTrip(): Observable<any> {
     let route = `${BaseRoute}/api/trip`;
     
-    let x = this.httpclient.get(route);
-    return x.toPromise();
+    return this.httpclient.get(route);
   }
 }
 

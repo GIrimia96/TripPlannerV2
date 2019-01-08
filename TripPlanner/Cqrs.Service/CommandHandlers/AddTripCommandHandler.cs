@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using Cqrs.Service.Command;
 using Cqrs.Service.CommandContracts;
 using EnsureThat;
@@ -23,6 +24,7 @@ namespace Cqrs.Service.CommandHandlers
             EnsureArg.IsNotNull(command);
 
             var mappedTrip = new Trip();
+            mappedTrip.Id = Guid.NewGuid();
 
             _mapper.Map(command.Trip, mappedTrip);
             _baseRepo.Add(mappedTrip);
