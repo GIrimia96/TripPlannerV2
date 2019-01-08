@@ -7,7 +7,6 @@ using Cqrs.Service.QueryResults;
 using Microsoft.AspNetCore.Mvc;
 using DomainModels;
 using EnsureThat;
-using Microsoft.AspNetCore.Cors;
 
 namespace TripPlanner.Api.Controllers
 {

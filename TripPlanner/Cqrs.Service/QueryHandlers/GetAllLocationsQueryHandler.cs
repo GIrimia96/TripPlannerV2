@@ -25,9 +25,6 @@ namespace Cqrs.Service.QueryHandlers
 
         public GetAllLocationsQueryResult Execute(GetAllLocationsQuery query)
         {
-            //return new GetAllLocationsQueryResult(new List<LocationDto>
-            //    {new LocationDto {Id = Guid.NewGuid(), Name = "name"}});
-
             var result = this.repo.Query().ToList();
 
             return new GetAllLocationsQueryResult(result.Select(x => new LocationDto
